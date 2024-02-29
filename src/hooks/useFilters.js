@@ -3,16 +3,11 @@ import { useContext } from "react";
 import { FiltersContext } from "../context/filters.jsx";
 
 export function useFilters() {
-  const { filters, setFilters } = useContext(FiltersContext);
+  const context = useContext(FiltersContext);
 
-  const productFilter = (products) => {
-    return products.filter((product) => {
-      return (
-        product.price >= filters.minPrice &&
-        (filters.category === "all" || product.category === filters.category)
-      );
-    });
-  };
+  if (context === undefined) {
+    throw new Error("useFiters must be used within a CartProvider");
+  }
 
-  return { productFilter, setFilters, filters };
+  return context;
 }
