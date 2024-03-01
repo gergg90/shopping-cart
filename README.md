@@ -1,5 +1,8 @@
 # React prueba tecnica carrito de compras.
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  /> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Texto alternativo" width="200"/>
+
+
+
 #### Enunciado
 Ecommerce:
 
