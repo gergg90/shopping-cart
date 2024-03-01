@@ -1,10 +1,4 @@
-# React 
-
-
-
-Prueba tecnica Carrito de compras.
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40" alt="react logo"  />
-
+# React prueba tecnica carrito de compras.
 
 
 #### Enunciado
