@@ -3,14 +3,42 @@ import {
   CartIcon,
   ClearCartIcon,
   PlusToCartIcon,
-  MinusToCartIcon
+  MinusToCartIcon,
 } from "./Icons.jsx";
 import { useCart } from "../hooks/useCart.js";
 import { useId } from "react";
 
+function CartItem({
+  thumbnail,
+  title,
+  price,
+  quantity,
+  addToCart,
+  minusToCart,
+}) {
+  return (
+    <li>
+      <img src={thumbnail} alt={title} />
+      <div>
+        <strong>{title}</strong> - {price}$
+      </div>
+
+      <footer>
+        <button onClick={minusToCart}>
+          <MinusToCartIcon />
+        </button>
+        <small>Quantity: {quantity}</small>
+        <button onClick={addToCart}>
+          <PlusToCartIcon />
+        </button>
+      </footer>
+    </li>
+  );
+}
+
 export function Cart() {
   const cartCheckBoxId = useId();
-  const { cart } = useCart();
+  const { cart, clearCart, addToCart, minusToCart } = useCart();
 
   return (
     <>
@@ -20,32 +48,24 @@ export function Cart() {
       <input id={cartCheckBoxId} type="checkbox" hidden />
 
       <aside className="cart">
-        <h3>Cart</h3>
+        <h3>Carrito de compras.</h3>
+        <hr />
         <ul>
-          <li>
-            <img
-              src="https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"
-              alt="iphone"
-            />
-            <div>
-              <strong>Iphone</strong> - 9000$
-            </div>
-
-            <footer>
-              <button>
-                <MinusToCartIcon />
-              </button>
-              <small>Quantity: 1</small>
-              <button>
-                <PlusToCartIcon />
-              </button>
-            </footer>
-          </li>
+          {cart.map((product) => {
+            return (
+              <CartItem
+                key={product.id}
+                addToCart={() => addToCart(product)}
+                minusToCart={() => minusToCart(product)}
+                {...product}
+              />
+            );
+          })}
         </ul>
 
         <div className="divClear">
-          <strong>Clear</strong>
-          <button>
+          <strong>Vaciar Carrito</strong>
+          <button onClick={() => clearCart()}>
             <ClearCartIcon />
           </button>
         </div>

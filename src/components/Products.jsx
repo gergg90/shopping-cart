@@ -9,7 +9,7 @@ export function Products() {
   const [products] = useState(initialProducts);
   const { productFilter } = useFilters();
 
-  const { cart, addToCart } = useCart();
+  const { cart, addToCart, removeFromCart } = useCart();
 
   const checkProductInCart = (product) => {
     return cart.some((item) => item.id === product.id);
@@ -31,7 +31,16 @@ export function Products() {
               </div>
               <div className="contentButton">
                 {product.price} $
-                <button onClick={() => addToCart(product)}>
+                <button
+                  style={{
+                    backgroundColor: isProductInCart ? "crimson" : "teal",
+                  }}
+                  onClick={() =>
+                    isProductInCart
+                      ? removeFromCart(product)
+                      : addToCart(product)
+                  }
+                >
                   {isProductInCart ? (
                     <ProductsAddedToCartIcon />
                   ) : (
