@@ -58,7 +58,7 @@ export function MinusToCartIcon() {
   );
 }
 
-export function RemoveFromCartIcon() {
+export function ClearCartIcon() {
   return (
     <svg
       width="24px"
@@ -78,25 +78,22 @@ export function RemoveFromCartIcon() {
   );
 }
 
-export function ClearCartIcon() {
+export function ProductsAddedToCartIcon() {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="24px"
+      height="24px"
       viewBox="0 0 24 24"
-      strokeWidth="1"
-      stroke="currentColor"
       fill="none"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M6 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
-      <path d="M17 17a2 2 0 1 0 2 2" />
-      <path d="M17 17h-11v-11" />
-      <path d="M9.239 5.231l10.761 .769l-1 7h-2m-4 0h-7" />
-      <path d="M3 3l18 18" />
+      <path
+        d="M7.2998 5H22L20 12H8.37675M21 16H9L7 3H4M4 8H2M5 11H2M6 14H2M10 20C10 20.5523 9.55228 21 9 21C8.44772 21 8 20.5523 8 20C8 19.4477 8.44772 19 9 19C9.55228 19 10 19.4477 10 20ZM21 20C21 20.5523 20.5523 21 20 21C19.4477 21 19 20.5523 19 20C19 19.4477 19.4477 19 20 19C20.5523 19 21 19.4477 21 20Z"
+        stroke="#000000"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }

@@ -3,7 +3,7 @@ import {
   CartIcon,
   ClearCartIcon,
   PlusToCartIcon,
-  MinusToCartIcon,
+  MinusToCartIcon
 } from "./Icons.jsx";
 import { useCart } from "../hooks/useCart.js";
 import { useId } from "react";
@@ -43,9 +43,12 @@ export function Cart() {
           </li>
         </ul>
 
-        <button>
-          <ClearCartIcon />
-        </button>
+        <div className="divClear">
+          <strong>Clear</strong>
+          <button>
+            <ClearCartIcon />
+          </button>
+        </div>
       </aside>
     </>
   );

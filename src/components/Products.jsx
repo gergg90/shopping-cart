@@ -1,5 +1,5 @@
 import "./Products.css";
-import { AddToCartIcon, RemoveFromCartIcon } from "./Icons.jsx";
+import { AddToCartIcon, ProductsAddedToCartIcon } from "./Icons.jsx";
 import { useState } from "react";
 import { products as initialProducts } from "../mocks/products.json";
 import { useFilters } from "../hooks/useFilters.js";
@@ -32,7 +32,11 @@ export function Products() {
               <div className="contentButton">
                 {product.price} $
                 <button onClick={() => addToCart(product)}>
-                  {isProductInCart ? <RemoveFromCartIcon /> : <AddToCartIcon />}
+                  {isProductInCart ? (
+                    <ProductsAddedToCartIcon />
+                  ) : (
+                    <AddToCartIcon />
+                  )}
                 </button>
               </div>
             </li>
