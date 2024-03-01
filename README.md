@@ -1,5 +1,4 @@
-# React prueba tecnica carrito de compras.
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Texto alternativo" width="200"/>
+# React prueba tecnica carrito de compras. <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Texto alternativo" height="40"/>
 
 
 
